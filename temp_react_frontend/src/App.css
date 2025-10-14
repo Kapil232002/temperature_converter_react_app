@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
-html , body {
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -11,55 +11,59 @@ html , body {
   height: 100vh;
   width: 100vw;
   background-color: azure;
+  overflow: auto; /* Added to allow scrolling if content overflows */
 }
  
 #navbar {
-    height :10vh;
-    width :100vw;
-    background-color: aqua;
-    position:absolute;
+  width: 100vw;
+  height : 13vh;
+  background-color: aqua;
+  padding: 10px 0;
+  position :fixed;
 }
 
 #nav-heading {
-    color:black;
-    margin-left :20px;
-    margin-top :5px;
+  color: black;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 #nav-heading span {
-    color:rgb(238, 25, 74);
-    font-size: 3.5rem;
+  color: rgb(238, 25, 74);
+  font-size: 3.5rem;
 }
 
 .card {
-    height :75vh;
-    width :80vw;
-    margin-top: 68px;
-    margin-left :10vw;
-    background-color: antiquewhite;
-    overflow: hidden;
+  width: 80vw;
+  height :70vh;
+  margin: 11vh auto 0 auto; 
+  background-color: antiquewhite;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
 }
 
-.card1,.card2{
-    height :7vh;
-    width: 67vw;
-    margin-left :6vw;
-    border-radius:7px;
-    margin-top: 10vh;
-    background-color: white;
+.card1, .card2 {
+  height: 7vh;
+  width: 100%; 
+  margin: 0; 
+  border-radius: 7px;
+  background-color: white;
 }
+.card1 {
+  margin-bottom: 20px;
+}
+
 .card1 span {
-    color: black;
-    font-weight: bold;
-    padding-left: 5%;
-    padding-top: 0.8%;
-    font-size: 22px;
-    display: block;
+  color: black;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 22px;
+  display: block;
 }
 
-.card2 {
-    margin-top:5vh;
-}
+
 
 .label-text {
   font-size: 1.3rem;
@@ -67,24 +71,51 @@ html , body {
   color: black;
   background-color: white;
   display: block;
-  margin-bottom: 6px;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0 15px; /* Added padding for text */
+
+
+}
+
+.label-text:focus {
+  outline: none;
+}
+
+#container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: 40px auto; 
+  margin-top:44vh; 
+  position: relative;
 }
 
 
 
 
-#container {
-    display :flex;
+
+.card-with-heading {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    position:absolute;
-    z-index: 2;
+    width: 45%; 
+}
+
+.card-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .card3 {
-    height :32vh;
-    width :28vw;
-    background-color: white;
-    margin-top: 58vh;
-    margin-left: 15vw;
+
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  
+  height: 32vh;
+  width: 100%; /* Takes the full width of its parent */
 }
