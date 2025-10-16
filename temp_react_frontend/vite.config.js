@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    host :true,
+    port:5173,
     proxy: {
       // All requests starting with /api will be sent to Django
       '/api': {

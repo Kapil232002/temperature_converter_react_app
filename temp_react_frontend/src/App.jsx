@@ -15,7 +15,7 @@ function App() {
             </div>
             <div className="card2">
               <input
-                type="text"
+                type="number"
                 id="x"
                 placeholder="Enter degrees"
                 className="label-text"
@@ -26,11 +26,19 @@ function App() {
         <div id="container">
           <div className="card-with-heading">
             <h3 className="card-heading">From</h3>
-            <div className="card3"></div>
+            <div className="card3">
+              <button>Celcius (°C )</button>
+              <button>Fahrenheit (°F )</button>
+              <button>Kelvin (K)</button>
+            </div>
           </div>
           <div className="card-with-heading">
             <h3 className="card-heading">To</h3>
-            <div className="card3"></div>
+            <div className="card3">
+              <button>Celcius (°C )</button>
+              <button>Fahrenheit (°F )</button>
+              <button>Kelvin (K)</button>
+            </div>
           </div>
                   
         </div>
