@@ -57,18 +57,3 @@ The frontend is what the user sees and interacts with. **Open a new terminal win
 
 ---
 
-## 📁 Project Structure Overview
-
-TEMPERATURE-CHECKING-APP/
-├── temp/ # Django App (Handles conversion logic)
-│ ├── urls.py # API URL routing
-│ └── views.py # The view that performs the conversion
-├── temp_react_frontend/ # React Frontend (The User Interface)
-│ ├── src/
-│ │ ├── App.css # All styling for the application
-│ │ └── App.jsx # The main React component with all UI and logic
-│ └── vite.config.js # Vite configuration, including the backend proxy
-├── temperature/ # Main Django Project
-│ ├── settings.py # Project settings (CORS, installed apps)
-│ └── urls.py # Main URL router
-└── manage.py # Django's primary command-line tool
