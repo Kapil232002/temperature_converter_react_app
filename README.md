@@ -1,53 +1,5 @@
 
 
-
-```markdown
-# 🔥 TemperatureScaler: A Modern Temperature Conversion App
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react" alt="React Badge"/>
-  <img src="https://img.shields.io/badge/Backend-Django-092E20?style=for-the-badge&logo=django" alt="Django Badge"/>
-  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python" alt="Python Badge"/>
-  <img src="https://img.shields.io/badge/Node.js-16.x%2B-339933?style=for-the-badge&logo=node.js" alt="Node.js Badge"/>
-</p>
-
-<p align="center">
-  <em>A sleek, responsive, and user-friendly web application for instant temperature conversions between Celsius, Fahrenheit, and Kelvin. Built with a powerful React frontend and a robust Django backend.</em>
-</p>
-
-<p align="center">
-  <img src="URL_TO_YOUR_APP_SCREENSHOT.gif" alt="App Demo" width="80%">
-</p>
-
-*(Note: Replace the URL above with a real screenshot or GIF of your running application!)*
-
----
-
-## ✨ Key Features
-
--   **Intuitive & Modern UI**: A clean and eye-catching interface designed for a seamless user experience on both desktop and mobile devices.
--   **Three Unit Support**: Instantly convert between **Celsius**, **Fahrenheit**, and **Kelvin**.
--   **Real-time Backend API**: A fast and reliable backend powered by Django delivers accurate conversion results instantly.
--   **Interactive Feedback**: Active unit selections are clearly highlighted, providing an intuitive visual guide for the user.
--   **Robust Error Handling**: Gracefully manages invalid inputs (like non-numeric values) and backend connection issues, showing clear, user-friendly error messages.
--   **Scalable Full-Stack Architecture**: A decoupled frontend (React) and backend (Django) allows for independent development, maintenance, and future scaling.
-
----
-
-## 🛠️ Technology Stack
-
-This project leverages a suite of modern and reliable technologies to deliver a high-quality user experience.
-
-| Category      | Technology                                                                                             | Role & Purpose                                                    |
-| :------------ | :----------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| **Frontend**  | **[React.js](https://react.dev/)**                                                                     | Powers the entire user interface, managing state and user interactions. |
-| **Backend**   | **[Django](https://www.djangoproject.com/)**                                                            | Provides the core conversion logic via a secure and scalable API.  |
-| **Styling**   | **CSS3 & Media Queries**                                                                               | Creates a beautiful and fully responsive layout for all screen sizes. |
-| **API Client**| **[Axios](https://axios-http.com/)**                                                                     | Manages communication between the React frontend and the Django backend. |
-| **Dev Server**| **[Vite](https://vitejs.dev/)**                                                                          | Enables a blazing-fast development experience with hot module reloading. |
-
----
-
 ## 🚀 Getting Started: Installation & Setup Guide
 
 Follow these instructions carefully to get the project up and running on your local machine.
