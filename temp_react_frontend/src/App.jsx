@@ -1,5 +1,3 @@
-// temp_react_frontend/src/App.jsx
-
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -12,6 +10,7 @@ function App() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // This function is ONLY called when the "Convert" button is clicked
   const handleConvert = async () => {
     if (value === "" || value === null) {
       setError("Please enter a temperature value");
@@ -24,7 +23,8 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/convert/", {
+      // The API call happens here
+      const response = await axios.post("/api/convert/", {
         value: parseFloat(value),
         fromUnit,
         toUnit,
@@ -32,20 +32,31 @@ function App() {
       setResult(response.data.result);
     } catch (err) {
       if (err.response) {
-        // The backend responded with an error (e.g., 400, 500)
         const backendError =
           err.response.data.error || "An error occurred on the server.";
         setError(`Error: ${backendError}`);
       } else if (err.request) {
-        // The request was made but no response was received
         setError("Backend not connected. Is the Django server running?");
       } else {
-        // Something else happened
         setError(`An unexpected error occurred: ${err.message}`);
       }
     } finally {
       setLoading(false);
     }
+  };
+
+  // ✅ NEW: Clears old result when changing units
+  const handleFromUnitChange = (unit) => {
+    setFromUnit(unit);
+    setResult(null); // Clear previous result
+    setError(""); // Clear previous error
+  };
+
+  // ✅ NEW: Clears old result when changing units
+  const handleToUnitChange = (unit) => {
+    setToUnit(unit);
+    setResult(null); // Clear previous result
+    setError(""); // Clear previous error
   };
 
   return (
@@ -66,7 +77,11 @@ function App() {
             placeholder="Enter degrees"
             className="label-text"
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => {
+              setValue(e.target.value);
+              setResult(null); // Also clear result when typing a new value
+              setError("");
+            }}
           />
         </div>
       </div>
@@ -79,7 +94,7 @@ function App() {
               <button
                 key={unit}
                 className={fromUnit === unit ? "active" : ""}
-                onClick={() => setFromUnit(unit)}
+                onClick={() => handleFromUnitChange(unit)} // Use the new handler
               >
                 {unit}
               </button>
@@ -94,7 +109,7 @@ function App() {
               <button
                 key={unit}
                 className={toUnit === unit ? "active" : ""}
-                onClick={() => setToUnit(unit)}
+                onClick={() => handleToUnitChange(unit)} // Use the new handler
               >
                 {unit}
               </button>

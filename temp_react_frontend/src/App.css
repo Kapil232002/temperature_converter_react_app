@@ -245,6 +245,10 @@ html, body {
   margin-bottom: 15px;
 }
 
+.card2 {
+  height :6vh;
+}
+
 .card1 span {
   color: black;
   font-weight: bold;
@@ -384,9 +388,102 @@ html, body {
   margin: 0.5rem 0 0;
 }
 
+@media (max-width: 600px) {
+  /* Navbar */
+  #navbar {
+    height: 10vh;
+  }
+
+  #nav-heading {
+    font-size: 7vw;
+    margin-top: 1.5vh;
+  }
+
+  #nav-heading span {
+    font-size: 8.5vw;
+  }
+
+  /* Temperature Input Card */
+  .card {
+    width: 90vw;
+    margin-top: 12vh; /* Space below fixed navbar */
+    padding: 15px;
+    height: auto; /* Allow height to grow */
+  }
+
+  .card1, .card2 {
+    height: auto;
+    padding: 8px;
+  }
+
+  .card1 span {
+    font-size: 1.1rem;
+    padding-left: 5px;
+  }
+
+  .label-text {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  /* From/To Cards Container - Stacked Vertically */
+  #container {
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    position: relative; /* Override position: fixed for scrolling */
+    margin: 20px auto 0 auto; /* Center it with space */
+    gap: 20px;
+  }
+
+  .card-with-heading {
+    width: 100%;
+  }
+
+  .card-heading {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .card3 {
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card3 button {
+    width: 100%;
+    margin: 0; /* Remove side margin */
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  /* --- IMPORTANT FIX FOR MOBILE --- */
+  /* Convert button and result boxes moved into page flow */
+
+  .convert-btn {
+    position: relative; /* Override position: fixed */
+    left: auto;
+    bottom: auto;
+    transform: none; /* Reset positioning */
+    margin: 30px 0; /* Add vertical space */
+  }
+
+  .error-box, .result-card {
+    position: relative; /* Override position: fixed */
+    left: auto;
+    bottom: auto;
+    transform: none; /* Reset positioning */
+    max-width: 90vw;
+    margin: 0 auto 30px auto; /* Center and add space at the bottom */
+  }
+}
+
 
 /* 🔹 Mobile Styles ≤600px */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
 
   #navbar {
     height: 10vh;
@@ -401,12 +498,12 @@ html, body {
     font-size: 8vw;
   }
 
-  /* Temperature Card */
+
   .card {
     width: 90vw;
-    margin-top: 12vh; /* navbar ke neeche */
+    margin-top: 12vh; 
     padding: 12px;
-    height: auto; /* height auto, scroll free */
+    height: auto; 
   }
 
   .card1 span {
@@ -419,13 +516,13 @@ html, body {
     padding: 8px 10px;
   }
 
-  /* From/To Container */
+
   #container {
     flex-direction: column;
     align-items: center;
     width: 90vw;
     margin-top: 15px;
-    gap: 15px; /* gap thoda kam */
+    gap: 15px; 
     position: relative;
   }
 
@@ -443,7 +540,7 @@ html, body {
   .card3 {
     width: 100%;
     padding: 15px;
-    height: auto; /* auto height */
+    height: auto; 
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -455,4 +552,4 @@ html, body {
     padding: 10px 0;
     font-size: 0.95rem;
   }
-}
+} */
