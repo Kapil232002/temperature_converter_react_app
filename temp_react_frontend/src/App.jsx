@@ -79,7 +79,7 @@ function App() {
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
-              setResult(null); // Also clear result when typing a new value
+              setResult(null); 
               setError("");
             }}
           />
@@ -94,7 +94,7 @@ function App() {
               <button
                 key={unit}
                 className={fromUnit === unit ? "active" : ""}
-                onClick={() => handleFromUnitChange(unit)} // Use the new handler
+                onClick={() => handleFromUnitChange(unit)} 
               >
                 {unit}
               </button>
@@ -109,7 +109,7 @@ function App() {
               <button
                 key={unit}
                 className={toUnit === unit ? "active" : ""}
-                onClick={() => handleToUnitChange(unit)} // Use the new handler
+                onClick={() => handleToUnitChange(unit)} 
               >
                 {unit}
               </button>
