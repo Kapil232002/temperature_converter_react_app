@@ -3,30 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   height: 100%;
   width: 100%;
 }
+
 #landing_page {
   height: 100vh;
   width: 100vw;
   background-color: azure;
-  overflow: auto; /* Added to allow scrolling if content overflows */
+  overflow: auto;
 }
- 
+
+/* Navbar */
 #navbar {
   width: 100vw;
-  height : 12vh;
+  height: 12vh;
   background-color: aqua;
   padding: 10px 0;
-  position :fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
 #nav-heading {
   color: black;
   margin-left: 3vw;
-  margin-top:0.3vh;
-  position:relative;
+  margin-top: 0.3vh;
+  position: relative;
 }
 
 #nav-heading span {
@@ -34,25 +40,23 @@ html, body {
   font-size: 3.5rem;
 }
 
+/* Temperature Card */
 .card {
   width: 80vw;
-  height :70vh;
-  margin: 11vh auto 0 auto; 
-  background-color: antiquewhite;
+  margin: 14vh auto 0 auto; /* navbar ke neeche */
   padding: 25px;
   border-radius: 10px;
-  position: relative;
+  background-color: antiquewhite;
+  height: auto; /* auto height mobile ke liye */
 }
 
 .card1, .card2 {
-  height: 7vh;
-  width: 100%; 
-  margin: 0; 
+  width: 100%;
+  height: auto; /* fixed height remove */
+  margin: 0;
   border-radius: 7px;
   background-color: white;
-}
-.card1 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .card1 span {
@@ -64,8 +68,6 @@ html, body {
   display: block;
 }
 
-
-
 .label-text {
   font-size: 1.3rem;
   font-weight: bold;
@@ -76,94 +78,124 @@ html, body {
   border: none;
   width: 100%;
   height: 100%;
-  padding: 0 15px; /* Added padding for text */
-
-
+  padding: 0 15px;
 }
 
 .label-text:focus {
   outline: none;
 }
 
+/* From/To Container */
 #container {
   display: flex;
   justify-content: space-evenly;
   width: 80vw;
-  margin: 40px auto; 
-  margin-top:48vh; 
+  margin: 40px auto;
+  margin-top: 20px; /* space from temperature card */
   position: relative;
 }
 
-
-
-
-
 .card-with-heading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 45%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
 }
 
 .card-heading {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: black;
-    margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
 }
 
 .card3 {
-
   background-color: white;
   border-radius: 10px;
   padding: 30px;
-  
-  height: 32vh;
-  width: 100%; /* Takes the full width of its parent */
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .card3 button {
-    width :26vw;
-    margin-left :3vw;
-    margin-bottom: 3vh;
-    background-color: rgba(190, 170, 170, 0.186);
-    color :black;
+  width: 26vw;
+  margin-left: 3vw;
+  margin-bottom: 3vh;
+  background-color: rgba(190, 170, 170, 0.186);
+  color: black;
 }
 
+/* 🔹 Mobile Styles ≤600px */
+@media (max-width: 600px) {
 
-@media (max-width :768px) {
-    #navbar {
-        height :10vh;
-    }
+  #navbar {
+    height: 10vh;
+  }
 
-    #nav-heading {
-        font-size :8vw;
-        margin-top: 1.7vh;
-        margin-left: 4vw;
-    }
-    #nav-heading span {
-        font-size :9.5vw;
-    }
+  #nav-heading {
+    font-size: 6vw;
+    margin-top: 2vh;
+  }
 
-    .card {
-        width :90vw;
-        height :70vmax;
-        margin-top :9vh;
-    }
-    #container {
-        width :90vw;
-        margin-top :44vh;
-        position:fixed;
-        margin-left :5vw;
-    }
-    .card3 {
-        width :38vw;
-        height :67vmin;
-        padding :3.9vw 1.7vh;
-    }
-    .card3 button {
-        padding-left :3.7vmin;
-        padding-bottom :1vh;
-    }
+  #nav-heading span {
+    font-size: 8vw;
+  }
 
+  /* Temperature Card */
+  .card {
+    width: 90vw;
+    margin-top: 12vh; /* navbar ke neeche */
+    padding: 12px;
+    height: auto; /* height auto, scroll free */
+  }
+
+  .card1 span {
+    font-size: 1rem;
+    padding-left: 8px;
+  }
+
+  .label-text {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
+
+  /* From/To Container */
+  #container {
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin-top: 15px;
+    gap: 15px; /* gap thoda kam */
+    position: relative;
+  }
+
+  .card-with-heading {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .card-heading {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .card3 {
+    width: 100%;
+    padding: 15px;
+    height: auto; /* auto height */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card3 button {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
 }
